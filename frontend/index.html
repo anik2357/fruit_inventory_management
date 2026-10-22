@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Inventory Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍎 Fruit Inventory Management</h1>
+            <p>Manage your fruits, stock quantities and prices.</p>
+        </header>
+
+        <section class="form-section">
+            <h2 id="formTitle">Add New Fruit</h2>
+
+            <form id="fruitForm">
+                <input type="hidden" id="fruitId">
+
+                <label for="name">Fruit Name</label>
+                <input type="text" id="name" maxlength="100"
+                       placeholder="e.g. Mango" required>
+
+                <label for="category">Category</label>
+                <input type="text" id="category" maxlength="100"
+                       placeholder="e.g. Seasonal Fruit" required>
+
+                <label for="stock_quantity">Stock Quantity</label>
+                <input type="number" id="stock_quantity"
+                       min="0" step="1" placeholder="Enter quantity" required>
+
+                <label for="unit_price">Unit Price (৳)</label>
+                <input type="number" id="unit_price"
+                       min="0" step="0.01" placeholder="Enter unit price" required>
+
+                <div class="buttons">
+                    <button type="submit" id="submitBtn">Add Fruit</button>
+                    <button type="button" id="cancelBtn" hidden>Cancel Edit</button>
+                    <button type="button" id="refreshBtn">Refresh</button>
+                </div>
+            </form>
+
+            <p id="message" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="inventory-section">
+            <h2>Fruit Inventory</h2>
+
+            <div class="summary">
+                <div class="summary-card">
+                    <span>Total Fruit Types</span>
+                    <strong id="totalTypes">0</strong>
+                </div>
+                <div class="summary-card">
+                    <span>Total Stock Quantity</span>
+                    <strong id="totalStock">0</strong>
+                </div>
+                <div class="summary-card">
+                    <span>Total Stock Value</span>
+                    <strong id="totalValue">৳0.00</strong>
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Stock Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Total Value</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="fruitTable">
+                        <tr>
+                            <td colspan="7">Loading fruits...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

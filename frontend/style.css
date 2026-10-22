@@ -1,0 +1,178 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 25px;
+    font-family: Arial, sans-serif;
+    background: #f3f6f4;
+    color: #24312a;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: #217346;
+}
+
+.form-section,
+.inventory-section {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+h2 {
+    margin-top: 0;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 18px;
+}
+
+label {
+    font-weight: bold;
+    align-self: end;
+}
+
+input {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ccd5ce;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+input:focus {
+    outline: 2px solid #9acbad;
+    border-color: #217346;
+}
+
+.buttons {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    background: #217346;
+    font-size: 14px;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+#cancelBtn,
+.edit-btn {
+    background: #d18b15;
+}
+
+#refreshBtn {
+    background: #526575;
+}
+
+.delete-btn {
+    background: #c0392b;
+}
+
+#message {
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.summary-card {
+    background: #eaf5ed;
+    border-radius: 8px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.summary-card strong {
+    font-size: 22px;
+    color: #217346;
+    overflow-wrap: anywhere;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+th,
+td {
+    border: 1px solid #e0e5e1;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background: #217346;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background: #f7faf8;
+}
+
+td button {
+    margin: 2px;
+}
+
+@media (max-width: 650px) {
+    body {
+        padding: 12px;
+    }
+
+    .form-section,
+    .inventory-section {
+        padding: 15px;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    .buttons {
+        grid-column: 1;
+    }
+
+    .summary {
+        grid-template-columns: 1fr;
+    }
+}
