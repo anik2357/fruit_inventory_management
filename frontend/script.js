@@ -231,7 +231,7 @@ function editFruit(id) {
 
 // DELETE: Remove a fruit from the database.
 async function deleteFruit(id) {
-    const fruit = fruits.find(item => item.id === id);
+    const fruit = fruits.find(item => Number(item.id) === Number(id));
 
     if (!fruit) {
         showMessage("Fruit not found.", true);
@@ -243,24 +243,21 @@ async function deleteFruit(id) {
     }
 
     try {
-        const response = await fetch(`${API_URL}/${id}`, {
+        const deleteURL = `${API_URL}/${id}`;
+
+        console.log("DELETE URL:", deleteURL);
+
+        const response = await fetch(deleteURL, {
             method: "DELETE"
         });
 
         if (!response.ok) {
-            const errorData = await response.json();
-
-            throw new Error(
-                errorData.detail || "Could not delete fruit."
-            );
-        }
-
-        if (fruitId.value === String(id)) {
-            resetForm();
+            throw new Error(`Delete failed: HTTP ${response.status}`);
         }
 
         await loadFruits();
         showMessage("Fruit deleted successfully.");
+
     } catch (error) {
         showMessage(error.message, true);
         console.error(error);
