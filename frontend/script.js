@@ -1,4 +1,4 @@
-const API_URL = "https://fruit-inventory-management.onrender.com";
+const API_URL = "https://fruit-inventory-management.onrender.com/fruits";
 
 const fruitForm = document.getElementById("fruitForm");
 const fruitTable = document.getElementById("fruitTable");
