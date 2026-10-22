@@ -1,4 +1,4 @@
-const API_URL = "http://127.0.0.1:8000/fruits/";
+const API_URL = "https://fruit-inventory-management.onrender.com";
 
 const fruitForm = document.getElementById("fruitForm");
 const fruitTable = document.getElementById("fruitTable");

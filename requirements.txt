@@ -2,5 +2,5 @@ fastapi
 uvicorn
 sqlalchemy
 pydantic
-pymysql
+# pymysql
 psycopg2-binary
