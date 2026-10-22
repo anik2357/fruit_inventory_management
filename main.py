@@ -22,6 +22,7 @@ app.add_middleware(
 app.include_router(fruit_router)
 
 
+
 @app.get("/")
 def home():
     return {"message": "Fruit Inventory API is running"}

@@ -159,7 +159,7 @@ fruitForm.addEventListener("submit", async function (event) {
     const isEditing = fruitId.value !== "";
 
     const url = isEditing
-        ? `${API_URL}${fruitId.value}`
+        ? `${API_URL}/${fruitId.value}`
         : API_URL;
 
     const method = isEditing ? "PUT" : "POST";
