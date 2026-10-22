@@ -243,7 +243,7 @@ async function deleteFruit(id) {
     }
 
     try {
-        const response = await fetch(`${API_URL}${id}`, {
+        const response = await fetch(`${API_URL}/${id}`, {
             method: "DELETE"
         });
 
